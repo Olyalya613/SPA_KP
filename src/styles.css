@@ -1,0 +1,129 @@
+/* Global black–pink theme */ 
+:root{
+  --bg:#0a0a0f;
+  --surface:#12121a;
+  --surface-2:#181825;
+  --text:#f6f2f6;
+  --muted:#b8adc6;
+  --border:#24223a;
+  --pink-900:#1b0a13;
+  --pink-800:#2a0f1e;
+  --pink-700:#c81e6a;
+  --pink-600:#e02673;
+  --pink-500:#ff3e86;
+  --pink-400:#ff6aa9;
+  --focus:#ff8ac2;
+  --shadow: 0 12px 40px rgba(255, 62, 134, .18);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  color:var(--text);
+  background:
+    radial-gradient(900px 400px at 10% -10%, rgba(255,62,134,.12), transparent 60%),
+    radial-gradient(900px 400px at 90% 110%, rgba(255,106,169,.08), transparent 60%),
+    linear-gradient(180deg, var(--bg), #050509 60%);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+a{color:var(--pink-400);text-decoration:none}
+a:hover{color:var(--pink-500)}
+.container{display:grid;grid-template-rows:auto 1fr auto;min-height:100vh}
+.layout{display:grid;grid-template-columns:260px 1fr;gap:16px;padding:16px}
+.site-header{
+  background:
+    radial-gradient(1200px 300px at 0% 0%, rgba(255,62,134,.18), transparent 60%),
+    linear-gradient(90deg, var(--pink-900), #0b0b11 45%);
+  border-bottom:1px solid var(--border);
+  padding:16px 24px;
+  position: sticky; top:0; z-index:10;
+}
+.site-header h1{margin:0;font-size:22px;letter-spacing:.3px}
+.site-header .muted{margin:0;color:var(--muted);font-size:13px}
+.site-header nav{display:flex;gap:14px;align-items:center}
+.site-header nav a{padding:8px 10px;border-radius:8px;color:var(--text);opacity:.9}
+.site-header nav a:hover{background:rgba(255,62,134,.12);opacity:1}
+.site-header nav a.is-active{background:rgba(255,62,134,.18);border:1px solid rgba(255,62,134,.35)}
+.site-footer{
+  background: linear-gradient(180deg, #0b0b11, var(--pink-900));
+  border-top:1px solid var(--border);
+  padding:14px 24px;
+  text-align:center;
+  color:var(--muted);
+}
+.card{
+  background:linear-gradient(180deg, var(--surface), var(--surface-2));
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:16px;
+  box-shadow: var(--shadow);
+}
+.input, .select, textarea{
+  width:100%;
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:#0f0f17;
+  color:var(--text);
+  outline:none;
+  transition:.2s border-color, .2s box-shadow;
+}
+.input:focus, .select:focus, textarea:focus{
+  border-color: var(--pink-600);
+  box-shadow: 0 0 0 3px rgba(255,62,134,.22);
+}
+.select{appearance:none}
+.btn{
+  display:inline-flex;
+  align-items:center; justify-content:center;
+  gap:8px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:10px 14px;
+  background:#151520;
+  color:var(--text);
+  cursor:pointer;
+  transition: .2s transform, .2s box-shadow, .2s background, .2s border-color, .2s color;
+  user-select:none;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn--primary{
+  background: linear-gradient(180deg, var(--pink-500), var(--pink-600));
+  border-color: rgba(255,62,134,.5);
+  color:#fff;
+  box-shadow: 0 10px 24px rgba(255,62,134,.25);
+}
+.btn--primary:hover{filter:brightness(1.05)}
+.btn--primary:focus{box-shadow:0 0 0 3px rgba(255,62,134,.35)}
+.btn--ghost{
+  background: transparent;
+  border-color: rgba(255,62,134,.35);
+  color: var(--pink-400);
+}
+.btn--ghost:hover{background: rgba(255,62,134,.12)}
+.btn--outline{
+  background: transparent;
+  border-color: var(--border);
+}
+.btn--outline:hover{border-color: var(--pink-600); color:#fff}
+.table{width:100%;border-collapse:separate;border-spacing:0}
+.table thead th{
+  text-align:left;
+  font-weight:600;
+  padding:12px 10px;
+  color:#f0dbe6;
+  background:linear-gradient(180deg, #161624, #131321);
+  position:sticky; top:0;
+}
+.table tbody td{padding:10px;border-top:1px solid var(--border)}
+.badge{
+  padding:2px 10px;
+  border-radius:999px;
+  background:rgba(255,62,134,.14);
+  color:#ffd1e6;
+  font-size:12px;
+  border:1px solid rgba(255,62,134,.3);
+}
+.muted{color:var(--muted)}
+.hidden{display:none}

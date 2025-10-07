@@ -1,0 +1,25 @@
+<div style="display:flex;gap:12px;align-items:center;margin-bottom:12px">
+  <input class="input" appAutofocus placeholder="Пошук моделей або брендів..."
+         (input)="onSearch($any($event.target).value)">
+  <a class="btn btn--primary" routerLink="/phones/new">+ Додати</a>
+</div>
+
+<table class="table">
+  <thead>
+    <tr><th>Фото</th><th>ID</th><th>Бренд</th><th>Модель</th><th>Ціна</th><th>Рік</th><th></th></tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of filtered()">
+      <td>
+        <img [src]="p.imageUrl || placeholder" (error)="imgError($event)"
+             alt="{{p.brand}} {{p.model}}" class="thumb">
+      </td>
+      <td>{{ p.id }}</td>
+      <td>{{ p.brand }}</td>
+      <td>{{ p.model }}</td>
+      <td>{{ p.price | currency:'USD':'symbol':'1.0-0' }}</td>
+      <td><span class="badge">{{ p.released }}</span></td>
+      <td><a class="btn btn--ghost" [routerLink]="['/phones', p.id]">Деталі</a></td>
+    </tr>
+  </tbody>
+</table>
