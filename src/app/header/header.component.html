@@ -1,0 +1,14 @@
+<header class="site-header" role="banner">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <div>
+      <h1>{{ projectName }}</h1>
+      <p class="muted">{{ tagline }}</p>
+    </div>
+    <nav aria-label="Головна навігація">
+      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">Головна</a>
+      <a routerLink="/phones/new" routerLinkActive="is-active">Додати</a>
+      <a routerLink="/profile" routerLinkActive="is-active">Профіль</a>
+      <a routerLink="/login" routerLinkActive="is-active">Увійти</a>
+    </nav>
+  </div>
+</header>

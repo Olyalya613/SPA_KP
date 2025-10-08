@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "@types/node": "^20.12.7"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4"
+  },
+  "scripts": {
+    "seed:users": "ts-node --transpile-only tools/seed-users.ts"
+  }
+}

@@ -1,0 +1,28 @@
+<div class="details" *ngIf="phone$ | async as p">
+  <a class="back" [routerLink]="['/']">← Назад</a>
+
+  <div class="card">
+    <div class="media">
+      <img [src]="placeholder(p.imageUrl)" [alt]="p.brand + ' ' + p.model">
+    </div>
+
+    <div class="body">
+      <h1>{{ p.brand }} <span class="muted">{{ p.model }}</span></h1>
+
+      <ul class="meta">
+        <li><b>OS:</b> {{ p.os }}</li>
+        <li><b>Рік:</b> {{ p.released }}</li>
+        <li><b>Ціна:</b> {{ p.price | currency:'USD' }}</li>
+      </ul>
+
+      <p class="desc" *ngIf="p.description; else noDesc">{{ p.description }}</p>
+      <ng-template #noDesc>
+        <p class="desc muted">Опис відсутній.</p>
+      </ng-template>
+
+      <div class="actions">
+        <a class="btn" [routerLink]="['/edit', p.id]">Редагувати</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="header">
+  <h1>Каталог телефонів</h1>
+  <a class="btn" [routerLink]="['/create']">Додати</a>
+</div>
+
+<div class="grid" *ngIf="phones$ | async as phones">
+  <div class="card" *ngFor="let p of phones">
+    <a [routerLink]="['/view', p.id]" class="media">
+      <img [src]="p.imageUrl && p.imageUrl.trim() ? p.imageUrl : placeholder" [alt]="p.brand + ' ' + p.model">
+    </a>
+    <div class="body">
+      <h3><a [routerLink]="['/view', p.id]">{{ p.brand }} <span class="muted">{{ p.model }}</span></a></h3>
+      <p class="meta">{{ p.os }} • {{ p.released }} • <b>{{ p.price | currency:'USD' }}</b></p>
+      <div class="actions">
+        <a class="btn" [routerLink]="['/view', p.id]">Переглянути</a>
+        <a class="btn ghost" [routerLink]="['/edit', p.id]">Редагувати</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="empty" *ngIf="(phones$ | async)?.length === 0">
+  <p>Каталог порожній.</p>
+</div>

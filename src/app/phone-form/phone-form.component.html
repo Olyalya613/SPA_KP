@@ -1,0 +1,20 @@
+<section class="container">
+  <div class="header-row">
+    <h1 *ngIf="editId !== null; else addTitle">Редагувати</h1>
+    <ng-template #addTitle><h1>Додати</h1></ng-template>
+    <a class="btn ghost" [routerLink]="['/']">Скасувати</a>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="save()" class="form">
+    <div class="grid">
+      <label>Бренд<input formControlName="brand" /></label>
+      <label>Модель<input formControlName="model" /></label>
+      <label>OS<input formControlName="os" /></label>
+      <label>Рік<input type="number" formControlName="released" /></label>
+      <label>Ціна<input type="number" formControlName="price" /></label>
+      <label>Зображення (URL/base64)<input formControlName="imageUrl" /></label>
+      <label class="full">Опис<textarea formControlName="description" rows="4"></textarea></label>
+    </div>
+    <button class="btn" type="submit">Зберегти</button>
+  </form>
+</section>

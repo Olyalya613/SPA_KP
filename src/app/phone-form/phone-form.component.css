@@ -1,0 +1,8 @@
+.container{max-width:900px;margin:0 auto;padding:24px}
+.header-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;background:#ff2d8a;color:#fff;text-decoration:none;border:1px solid transparent}
+.btn.ghost{background:transparent;border-color:#ff2d8a;color:#ff2d8a}
+.form .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.form label{display:flex;flex-direction:column;gap:6px}
+.form input,.form textarea{background:rgba(255,255,255,.04);border:1px solid rgba(255,45,138,.25);border-radius:10px;color:#fff;padding:10px}
+.form label.full{grid-column:1/-1}
